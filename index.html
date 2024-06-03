@@ -1,0 +1,406 @@
+<!doctype html>
+
+<html>
+	
+<head>
+    
+<!-- headings font-->
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    
+<!-- navigation button font-->
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Zeyada&display=swap" rel="stylesheet">
+
+    <!-- body text font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Dosis:wght@200..800&family=Lora:ital,wght@0,400..700;1,400..700&family=Zeyada&display=swap" rel="stylesheet">
+
+	
+<!--The following displays language used in browser to interpret page -->
+<meta charset="UTF-8">
+
+<!--The following line of code displays the page title on a browser tab -->
+<title>Site Title | Home</title>
+
+<!--link tags are for linking to external files, in this case your CSS stylesheet-->
+<link href="style.css" rel="stylesheet" type="text/css">
+	
+<!--link tags are for linking to external files, in this case a special CSS stylesheet-->
+<link href="normalize.css" rel="stylesheet" type="text/css">
+
+<!--the following tag tells the browser to adjust the site according to screen size-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--The following code links to the jquery library -->
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+
+<!--The following code links to the javascript file that runs the slideshow -->	
+<script type="text/javascript" src="js/jquery.cycle2.min.js"></script>
+    
+<!--The following code links to the javascript file that runs the parallax image -->    
+<script src="js/parallax.min.js"></script>
+	
+<!--The following code links to Google Fonts-->
+<link href="https://fonts.googleapis.com/css?family=Raleway:900|Rubik" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	
+<!--The following javscript runs the jquery slideshow -->
+<script type="text/javascript">
+$('#slider').cycle({});
+</script>
+
+<!--The following javascript runs the nav bar which disappears on scroll-->
+<script type="text/javascript">
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('header').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('header').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('header').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+}
+</script>
+    
+<!--Favicon - images are in a folder called 'fav'-->
+<link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
+<link rel="manifest" href="img/fav/site.webmanifest">
+<link rel="mask-icon" href="img/fav/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!--End Favicon-->
+    
+<!--back to top button-->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}    
+</script>   
+</head>
+
+<body>
+
+<!--beginning of navigation section-->
+<header>
+   <div class="nav-container">
+        <div class="brand"><img src="img/logo.png" width="75" height="75" alt=""/></div>
+        <nav>
+            <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+            <ul class="nav-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gal">Photos</a></li>
+                <li><a href="#tl">Audio</a></li>
+                <li><a href="#vid">Video</a></li>
+                <li><a href="#infographic">Toolbox</a></li>
+                <li><a href="#playlist">Playlist</a></li>
+            </ul>
+        </nav>
+    </div>
+<!--closing navigation tag-->
+</header>
+<!--end of navigation section-->
+    
+<!--main image-->
+<div class="container">
+</div>
+<!--animated welcome-->
+<div class="wrapper">
+<!--animated welcome code here-->	
+</div>
+    
+<!--beginning of main content area-->
+<div class="row whiteBG">
+<h2 id="home" class="dissolve-title">BEAD IT, SLO</h2>
+    
+<article>
+<p class="tab">In San Luis Obispo, there is a niche community of artists who make their own jewelry.<br><br>Discover what students are making and what that making means to them.</p>
+<p class="tab"><a href="#gal">Photos</a></p>
+</article>
+</div>
+
+<!--beginning of slideshow section-->
+<div class="row blueBG"><!--beginning of row-->
+<h2 id="gal">Student Makers Crafting Jewelry, Connecting Community
+</h2>
+<article><!--beginning of article-->
+<p class="tab">Meet Amanda, Jordan and Anna: finding themselves through crafting customized jewelry 
+</p>
+<!--beginning of slideshow-->
+<div id="slider"
+data-cycle-caption="#alt-caption"
+data-cycle-caption-template="{{alt}}"
+data-cycle-fx="scrollHorz"
+data-cycle-pause-on-hover="true"
+data-cycle-speed="200">
+<div class="cycle-prev"></div>
+<div class="cycle-next"></div>
+<img src="img/1.jpg" width="100%" height="100%" alt="There is a niche community in San Luis Obispo of students who make their own jewelry, many of who said they began during the pandemic as a way to keep busy. Graphic design senior Anna Prodzinski is one of those students. She has been making her own jewelry for five years now. Often she comes to Dexter Lawn, to sit in the sun and enjoy her hobby. 
+"/>
+<img src="img/2.jpg" width="100%" height="100%" alt="Liberal Studies senior Amanda Richardson sits in her living room in San Luis Obispo, gathering her supplies to begin making jewelry. She will sit down for one to three hours at a time, crafting various pieces. Richardson makes everything from earrings to rings to necklaces in her spare time. She has boxes and boxes of supplies. 
+                                                    
+Richardson said she began making jewelry in 2020 during the pandemic. One day, Richardson found a large box of her mother’s jewelry-making supplies. Her mother, Lynne Richardson, had once made jewelry but had since given up the craft. Richardson said her new hobby makes her feel connected to her mom. 
+
+"/>
+<img src="img/3.jpg" width="100%" height="100%" alt="Environmental Engineering junior Jordan Reichhart also discovered the hobby in quarantine. She said during lockdown, she was constantly looking for ways to artistically express herself and keep her mind and hands busy.
+"/>
+<img src="img/4.jpg" width="100%" height="100%" alt="Prodzinski said she loves to make things for friends, and that the ability to make your own pieces opens up the door for being able to express yourself how you want. 
+
+                                                     
+“One time my friend was going to a party or some event and she was like ‘I wish I had this necklace to match this dress I want to wear,’ so I sat on the floor and whipped one out for her,” she said.  
+"/>
+<img src="img/5.jpg" width="100%" height="100%" alt="In her senior year of high school, she sold her jewelry and donated the proceeds to a charity “Art for Thirst Project” which works to provide fresh water wells to those across the world who don’t have access to fresh drinking water. Reichhart raised more than 1,200 dollars from selling her art. 
+"/>
+<img src="img/6.jpg" width="100%" height="100%" alt="For Richardson, jewelry-making can be quite therapeutic. “I get into a kind of flow state,” she said, “and everything else kind of melts away.” 
+"/>
+<img src="img/7.jpg" width="100%" height="100%" alt="Reichhart holds out some of the pieces she’s made with various shells and stones she collected. Her pieces are often inspired by nature and the world around her. She enjoys wire-wrapping stones and crystals she finds on the beach. 
+
+
+“I got super interested in just how marine life changes in different temperatures and waters,” she said, lifting up a piece she made with shells collected from Morro Bay and Puerto Rico.
+
+
+"/>
+<img src="img/8.jpg" width="100%" height="100%" alt="Richardson said making her own jewelry is extremely cost-effective. “I can get this roll of wire for what, seven bucks? That’s a way better deal than buying an entire piece,” Richardson said.  
+ 
+Richardson is not only saving money but making some too. During COVID, she started selling her jewelry to friends through Instagram and would drive around her hometown, dropping pieces off at different people’s houses. 
+"/>
+<img src="img/9.jpg" width="100%" height="100%" alt="Prodinski sells her jewelry and does commissions via her Instagram @lucky.me.jewelry, and sometimes runs into people she doesn’t know wearing her jewelry if they were given it as a gift. 
+
+“One time I was at Campus Market and the guy who was checking me out – the cashier – was wearing a necklace I made. And I was like ‘No way!’” she said.  
+
+Prodinski said she loves it when this happens and that it is a great way to connect with people. 
+"/>
+<img src="img/10.jpg" width="100%" height="100%" alt="Richardson now is mostly selling her jewelry where she currently works, at the Sycamore Mineral Springs Resort & Spa gift shop in Avila Beach. Richardson stamps and packages each item individually, adorning the holders, with a customized stamp that reads “Mandy Made.” By the end of an hour-long jewelry-making session, Richardson has made three sets of earrings and a few rings. More of Ricardson’s work can be found on her Instagram @mandyy.made. 
+
+
+"/>
+</div><!--end of slideshow-->
+<!--beginning of slideshow caption-->
+<div id="alt-caption" class="center">
+</div><!--end of slideshow caption-->
+<p class="tab"><a href="#tl">Audio</a></p>
+</article><!--end of article-->
+</div><!--end of row-->
+<!--end of slideshow section-->
+	
+<!--beginning of audio section-->
+<div class="row whiteBG">
+<h2 id="tl">"Tell me the story behind what you're wearing"</h2>
+<article>
+  <p class="tab">Click on images to hear about what the jewelry Cal Poly student's are wearing means to them<br>(Double-click to pause audio)</p>
+  <div class="table">
+	<div id="trip">
+<audio id="audio_1">
+    <source src="audio/1.wav" type="audio/mpeg" />
+</audio>        
+<audio id="audio_2">
+    <source src="audio/2.wav" type="audio/mpeg" />
+</audio>        
+<audio id="audio_3">
+	<source src="audio/3.wav" type="audio/mpeg" />
+</audio>
+        
+<img src="img/rollover/1.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/1.jpg'" onMouseOut="this.src='img/rollover/1.gif'" onClick="document.getElementById('audio_1').play(); return false;" onDblClick="document.getElementById('audio_1').pause(); return false;">
+ /&gt; 
+            
+<img src="img/rollover/2.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/2.jpg'" onMouseOut="this.src='img/rollover/2.gif'" onClick="document.getElementById('audio_2').play(); return false;" onDblClick="document.getElementById('audio_2').pause(); return false;">
+ /&gt;
+            
+<img src="img/rollover/3.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/3.jpg'" onMouseOut="this.src='img/rollover/3.gif'" onClick="document.getElementById('audio_3').play(); return false;" onDblClick="document.getElementById('audio_3').pause(); return false;">
+/&gt;
+	</div>
+</div>
+<p class="tab"><a href="#vid">Video</a></p>		
+</article>
+</div>
+<!--end of audio section-->
+    
+<!--beginning of parallax image-->
+<div class="parallax" data-parallax="scroll" data-bleed="10" data-speed="0.2" iosFix="true" data-image-src="img/parallax.jpg">
+</div>
+<!--end of parallax image-->
+
+<!--beginning of video section-->
+<div class="row orangeBG">
+<h2 id="vid">The World of Jewelry Making</h2>
+<article>
+<p class="tab">Watch how making jewelry has transformed this student's life</p>	
+<video width="100%" height="100%" poster="img/poster.jpg" controls>
+<source src="img/video.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<p class="tab"><a href="#num">Navigation</a></p>
+</article>
+</div>
+<!--end of video section-->
+
+
+<!--beginning of infographic section-->
+    
+<div class="row whiteBG">
+    <h1 id="infographic">Jewelry Tool Box</h1>
+    <article>
+        <p class="tab">What should you have in your kit?</p>
+        <img src="img/infographic.png" alt="Infographic"/>
+    </article>
+</div>
+<!--end of infographic section-->
+    
+<body>
+    
+    </body> <div class="row orangeBG">
+    
+    
+<h3 id="playlist"> Soundtrack for Making Jewelry</h3>
+ <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4Z2A2LMU5SYjf4bhTa7UfT?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</div>
+<body>
+    <div>
+	
+<!--beginning of footer-->
+<footer>Bead It, SLO | San Luis Obispo, CA | <a href="mailto: lauren_emo@yahoo.com?Subject=Inquiry" target="_top">Send Email</a> | Copyright 2024 | Site by Lauren Emo 
+</footer>
+<!--end of footer-->
+    </div>
+	
+<!--the following script controls the responsive navigation-->
+<script>
+	(function($) { // Begin jQuery
+  $(function() { // DOM ready
+    // If a link has a dropdown, add sub menu toggle.
+    $('nav ul li a:not(:only-child)').click(function(e) {
+      $(this).siblings('.nav-dropdown').toggle();
+      // Close one dropdown when selecting another
+      $('.nav-dropdown').not($(this).siblings()).hide();
+      e.stopPropagation();
+    });
+    // Clicking away from dropdown will remove the dropdown class
+    $('html').click(function() {
+      $('.nav-dropdown').hide();
+    });
+    // Toggle open and close nav styles on click
+    $('#nav-toggle').click(function() {
+      $('nav ul').slideToggle();
+    });
+    // Hamburger to X toggle
+    $('#nav-toggle').on('click', function() {
+      this.classList.toggle('active');
+    });
+  }); // end DOM ready
+})(jQuery); // end jQuery
+	</script>
+	<script>
+	var headertext = [];
+var headers = document.querySelectorAll("#miyazaki th"),
+tablerows = document.querySelectorAll("#miyazaki th"),
+tablebody = document.querySelector("#miyazaki tbody");
+for(var i = 0; i < headers.length; i++) {
+	var current = headers[i];
+	headertext.push( current.textContent.replace( /\r?\n|\r/,"") );
+}
+for (var i = 0, row; row = tablebody.rows[i]; i++) {
+	for (var j = 0, col; col = row.cells[j]; j++) {
+		col.setAttribute("data-th", headertext[j]);
+	}
+}
+</script>
+    
+
+	
+	<!----Prevents audio tracks from playing simultaneously---->
+<script>
+document.addEventListener('play', function(e){
+    var audios = document.getElementsByTagName('audio');
+    for(var i = 0, len = audios.length; i < len;i++){
+        if(audios[i] != e.target){
+            audios[i].pause();
+        }
+    }
+}, true);
+    </script>
+
+    
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+
+  const title = document.querySelector(".dissolve-title");
+
+  const text = title.textContent;
+
+  title.innerHTML = "";
+
+ 
+
+  for (let char of text) {
+
+    const span = document.createElement("span");
+
+    if (char === " ") {
+
+      span.innerHTML = "&nbsp;";
+
+    } else {
+
+      span.textContent = char;
+
+    }
+
+    title.appendChild(span);
+
+  }
+
+});
+
+</script>
+</html>
+
